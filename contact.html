@@ -24,6 +24,17 @@
    ================================================== -->
 	<script src="js/modernizr.js"></script>
 	<script src="js/pace.min.js"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script>
+		var btn=document.getElementById('btn');
+		btn.addEventListener('click',function(e) {
+			e.preventDefault()
+			console.log(cName);
+			console.log(cEmail);
+			console.log(cWebsite);
+			console.log(cMessage);
+		}
+	</script>
 
 	<!-- favicons
 	================================================== -->
@@ -167,7 +178,7 @@
 								</div>
 
 								<div class="form-field">
-									<input name="cEmail" type="text" id="cEmail" class="full-width"
+									<input name="cEmail" type="email" id="cEmail" class="full-width"
 										placeholder="Your Email" value="">
 								</div>
 
@@ -178,7 +189,7 @@
 										placeholder="Your Message"></textarea>
 								</div>
 
-								<button type="submit" class="submit button-primary full-width-on-mobile">Submit</button>
+								<button type="submit" id="btn" class="submit button-primary full-width-on-mobile">Submit</button>
 
 							</fieldset>
 						</form> <!-- end form -->
