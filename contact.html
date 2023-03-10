@@ -24,7 +24,7 @@
    ================================================== -->
 	<script src="js/modernizr.js"></script>
 	<script src="js/pace.min.js"></script>
-	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<!--<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script>
 		var btn=document.getElementById('btn');
 		btn.addEventListener('click',function(e) {
@@ -34,7 +34,7 @@
 			console.log(cWebsite);
 			console.log(cMessage);
 		}
-	</script>
+	</script>-->
 
 	<!-- favicons
 	================================================== -->
@@ -193,6 +193,17 @@
 
 							</fieldset>
 						</form> <!-- end form -->
+						<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script>
+		var btn=document.getElementById('btn');
+		btn.addEventListener('click',function(e) {
+			e.preventDefault()
+			console.log(cName);
+			console.log(cEmail);
+			console.log(cWebsite);
+			console.log(cMessage);
+		}
+	</script>
 
 				</section>
 
