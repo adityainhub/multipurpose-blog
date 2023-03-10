@@ -198,11 +198,22 @@
 		var btn=document.getElementById('btn');
 		btn.addEventListener('click',function(e) {
 			e.preventDefault()
-			console.log(cName);
-			console.log(cEmail);
-			console.log(cWebsite);
-			console.log(cMessage);
-		}
+			var name = document.GetElementById('cName').value;
+			var email = document.GetElementById('email').value;
+			var website = document.GetElementById('website').value;
+			var message = document.GetElementById('message').value;
+			var body = 'name :'+name+'<br/>email :'+email+'<br/>Website :'+website+'<br/>message : '+message;
+			
+			Email.send({
+    SecureToken : "004d9dfd-0fb2-49ef-abb0-f421fe769d3df",
+    To : 'vedant.is22@bmsce.ac.in',
+    From : "blog@smtp.com",
+    Subject : "Multipurpose-Blog Contact Message",
+    Body : body
+}).then(
+  message => alert(message)
+);
+		)}
 	</script>
 
 				</section>
