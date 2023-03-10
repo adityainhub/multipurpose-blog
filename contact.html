@@ -24,6 +24,17 @@
    ================================================== -->
 	<script src="js/modernizr.js"></script>
 	<script src="js/pace.min.js"></script>
+	<!--<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script>
+		var btn=document.getElementById('btn');
+		btn.addEventListener('click',function(e) {
+			e.preventDefault()
+			console.log(cName);
+			console.log(cEmail);
+			console.log(cWebsite);
+			console.log(cMessage);
+		}
+	</script>-->
 
 	<!-- favicons
 	================================================== -->
@@ -111,11 +122,12 @@
 				<section>
 
 					<div class="content-media">
-						<div id="map-wrap">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.4814120561705!2d77.56333174986317!3d12.941017419006462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae158b11e34d2f%3A0x5f4adbdbab8bd80f!2sBMS%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1678409009489!5m2!1sen!2sin" width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<!--<div id="map-wrap">
 							<div id="map-container"></div>
 							<div id="map-zoom-in"></div>
 							<div id="map-zoom-out"></div>
-						</div>
+						</div>-->
 					</div>
 
 					<div class="primary-content">
@@ -167,7 +179,7 @@
 								</div>
 
 								<div class="form-field">
-									<input name="cEmail" type="text" id="cEmail" class="full-width"
+									<input name="cEmail" type="email" id="cEmail" class="full-width"
 										placeholder="Your Email" value="">
 								</div>
 
@@ -178,10 +190,32 @@
 										placeholder="Your Message"></textarea>
 								</div>
 
-								<button type="submit" class="submit button-primary full-width-on-mobile">Submit</button>
+								<button type="submit" id="btn" class="submit button-primary full-width-on-mobile">Submit</button>
 
 							</fieldset>
 						</form> <!-- end form -->
+						<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script>
+		var btn=document.getElementById('btn');
+		btn.addEventListener('click',function(e) {
+			e.preventDefault()
+			var name = document.GetElementById('cName').value;
+			var email = document.GetElementById('email').value;
+			var website = document.GetElementById('website').value;
+			var message = document.GetElementById('message').value;
+			var body = 'name :'+name+'<br/>email :'+email+'<br/>Website :'+website+'<br/>message : '+message;
+			
+			Email.send({
+    SecureToken : "004d9dfd-0fb2-49ef-abb0-f421fe769d3df",
+    To : 'vedant.is22@bmsce.ac.in',
+    From : "blog@smtp.com",
+    Subject : "Multipurpose-Blog Contact Message",
+    Body : body
+}).then(
+  message => alert(message)
+);
+		)}
+	</script>
 
 				</section>
 
